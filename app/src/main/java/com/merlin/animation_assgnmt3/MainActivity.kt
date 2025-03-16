@@ -21,9 +21,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Animation_Assgnmt3Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
                     NavigationGraph()
-                }
+
             }
         }
     }
