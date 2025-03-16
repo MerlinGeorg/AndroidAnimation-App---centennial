@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.*
+//import androidx.navigation.compose.rememberNavController
 import com.merlin.animation_assgnmt3.ui.theme.Animation_Assgnmt3Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +22,47 @@ class MainActivity : ComponentActivity() {
         setContent {
             Animation_Assgnmt3Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    NavigationGraph()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    Animation_Assgnmt3Theme {
-        Greeting("Android")
+fun NavigationGraph() {
+    val navController = rememberNavController()
+
+    NavHost(
+        navController = navController,
+        startDestination = "main_menu"
+    ) {
+        composable("main_menu") {
+            MainMenuScreen(navController)
+        }
+
+        composable("animation1") {
+            Animation1Screen(navController)
+        }
+
+        composable("animation2") {
+            Animation2Screen(navController)
+        }
+
+        composable("animation3") {
+            Animation3Screen(navController)
+        }
+
+        composable("animation4") {
+            Animation4Screen(navController)
+        }
     }
+
+
+
+
+
+
+
 }
