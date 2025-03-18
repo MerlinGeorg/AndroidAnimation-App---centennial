@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
     packaging {
         resources {
@@ -68,5 +68,18 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     //navigation
     implementation("androidx.navigation:navigation-compose:2.7.5")
+
+    // Animation dependencies
+    implementation("androidx.compose.animation:animation:1.5.4")
+    implementation("androidx.compose.animation:animation-core:1.5.4")
+
+    // For gesture recognition and input handling
+    implementation("androidx.compose.foundation:foundation:1.5.4")
+
+    // Runtime for composable functions
+   // implementation "androidx.compose.runtime:runtime:1.5.4"
+
+    // For coroutines support (used in animations)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
 }

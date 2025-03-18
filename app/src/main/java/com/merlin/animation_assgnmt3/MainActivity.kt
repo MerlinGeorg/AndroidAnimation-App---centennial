@@ -1,5 +1,7 @@
 package com.merlin.animation_assgnmt3
 
+import Animation1Screen
+import Animation4Screen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
